@@ -1,0 +1,774 @@
+{
+	"info": {
+		"_postman_id": "35215d37-283c-4014-af28-798b01db667e",
+		"name": "Library Management System APIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34571424",
+		"_collection_link": "https://krishiv-studios.postman.co/workspace/Krishiv-Studios-Workspace~d10b32c5-4973-4306-bb1a-7c63166788d1/collection/34571424-35215d37-283c-4014-af28-798b01db667e?action=share&source=collection_link&creator=34571424"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Admin Rrgistration",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Vial",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "viral18@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "viral16@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMjgyMDA2LCJleHAiOjE3NDMyODU2MDYsIm5iZiI6MTc0MzI4MjAwNiwianRpIjoiSlJ6akFweFBZbnR5S3BxRCIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.nL2BFEsxXSH9H-RaMQ-aNIUvxmChck7xygA7IyZltBY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/refresh",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get login user profile details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMjgyMjUzLCJleHAiOjE3NDMyODU4NTMsIm5iZiI6MTc0MzI4MjI1MywianRpIjoiazlKZ2JEdnFVT2ZrQU1sUSIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kzh_vVQGDQkAJ2Jo3G4h7biKJTzILuQQgSOK-7j_KlM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/me",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzNDc3NTA0LCJleHAiOjE3NDM0ODExMDQsIm5iZiI6MTc0MzQ3NzUwNCwianRpIjoiRE5yd3FvbHFsSjg4SkxTNSIsInN1YiI6ImYwM2QzMDkyLTcwYzAtNGRhMi04MGZjLWQyMDQxZTE1MTM1OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ._hRG809uYVrZwGc8VAgjOlpGOxqFmd5IuBhcGH4qk3I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role Management",
+			"item": [
+				{
+					"name": "Get all roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMjgyMjUzLCJleHAiOjE3NDMyODU4NTMsIm5iZiI6MTc0MzI4MjI1MywianRpIjoiazlKZ2JEdnFVT2ZrQU1sUSIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kzh_vVQGDQkAJ2Jo3G4h7biKJTzILuQQgSOK-7j_KlM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/roles",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMzMyMTAxLCJleHAiOjE3NDMzMzU3MDEsIm5iZiI6MTc0MzMzMjEwMSwianRpIjoiOG5JcEdibGJwQU1XSlJrYSIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.I1vEPcl3HchRgsRmQsd2Wucd57Gcsqxlp2lQa2t-p_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Super Admin3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/roles",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single role details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMzMyMTAxLCJleHAiOjE3NDMzMzU3MDEsIm5iZiI6MTc0MzMzMjEwMSwianRpIjoiOG5JcEdibGJwQU1XSlJrYSIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.I1vEPcl3HchRgsRmQsd2Wucd57Gcsqxlp2lQa2t-p_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/roles/203e14f3-2609-471d-8ebc-3e11c3b5ba53",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"roles",
+								"203e14f3-2609-471d-8ebc-3e11c3b5ba53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMzMyMTAxLCJleHAiOjE3NDMzMzU3MDEsIm5iZiI6MTc0MzMzMjEwMSwianRpIjoiOG5JcEdibGJwQU1XSlJrYSIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.I1vEPcl3HchRgsRmQsd2Wucd57Gcsqxlp2lQa2t-p_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/roles/203e14f3-2609-471d-8ebc-3e11c3b5ba53",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"roles",
+								"203e14f3-2609-471d-8ebc-3e11c3b5ba53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete specific role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMzMyMTAxLCJleHAiOjE3NDMzMzU3MDEsIm5iZiI6MTc0MzMzMjEwMSwianRpIjoiOG5JcEdibGJwQU1XSlJrYSIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.I1vEPcl3HchRgsRmQsd2Wucd57Gcsqxlp2lQa2t-p_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/roles/203e14f3-2609-471d-8ebc-3e11c3b5ba53",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"roles",
+								"203e14f3-2609-471d-8ebc-3e11c3b5ba53"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book Management",
+			"item": [
+				{
+					"name": "Create Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzNDcyNDI2LCJleHAiOjE3NDM0NzYwMjYsIm5iZiI6MTc0MzQ3MjQyNiwianRpIjoidkJmcDVHc3Y2UG5wR1pQbiIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.KNAKebh6ud7hoN09Osj9B4AsauqY-IEA5oGbZDtKJgA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "The ice burge part 2",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "This is the powerfull book.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Available Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzNDcyNDM4LCJleHAiOjE3NDM0NzYwMzgsIm5iZiI6MTc0MzQ3MjQzOCwianRpIjoiQ0V0cHF4aFczczRvSFRnYiIsInN1YiI6ImYwM2QzMDkyLTcwYzAtNGRhMi04MGZjLWQyMDQxZTE1MTM1OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LAx08UY5cJmKELMPCDOpHtOWs_F82YRYQt34Pb1O5n0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "search_term",
+									"value": "dad",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single book details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzNDQ4MDU3LCJleHAiOjE3NDM0NTE2NTcsIm5iZiI6MTc0MzQ0ODA1NywianRpIjoiVm10NnQ0NUhVMUpQTEdlTyIsInN1YiI6ImYwM2QzMDkyLTcwYzAtNGRhMi04MGZjLWQyMDQxZTE1MTM1OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dJ7r-x9TYQ9dqr463cCEU8OzQeHxDS5TPrQRMOuSiNk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/3b33911e-5fd7-49fe-817e-07529658223b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"3b33911e-5fd7-49fe-817e-07529658223b"
+							],
+							"query": [
+								{
+									"key": "search_term",
+									"value": "dad",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMzQ0NzIxLCJleHAiOjE3NDMzNDgzMjEsIm5iZiI6MTc0MzM0NDcyMSwianRpIjoiUmNIaE45bndqdU5tSklmNyIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ew4XxHKTTLMae7gqpLfSjqLxZcUGYmQpQwlF9zETyk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"The Astro\",\r\n    \"details\" : \"This is most important book\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/3b33911e-5fd7-49fe-817e-07529658223b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"3b33911e-5fd7-49fe-817e-07529658223b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete  book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMzQ0NzIxLCJleHAiOjE3NDMzNDgzMjEsIm5iZiI6MTc0MzM0NDcyMSwianRpIjoiUmNIaE45bndqdU5tSklmNyIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ew4XxHKTTLMae7gqpLfSjqLxZcUGYmQpQwlF9zETyk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/books/3b33911e-5fd7-49fe-817e-07529658223b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books",
+								"3b33911e-5fd7-49fe-817e-07529658223b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Borrow Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzNDcyNDM4LCJleHAiOjE3NDM0NzYwMzgsIm5iZiI6MTc0MzQ3MjQzOCwianRpIjoiQ0V0cHF4aFczczRvSFRnYiIsInN1YiI6ImYwM2QzMDkyLTcwYzAtNGRhMi04MGZjLWQyMDQxZTE1MTM1OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LAx08UY5cJmKELMPCDOpHtOWs_F82YRYQt34Pb1O5n0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"book_id\" : \"a9c93a02-63e4-46cc-a4f4-a04fe43f63e7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/borrow-book",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"borrow-book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzNDQ4MDU3LCJleHAiOjE3NDM0NTE2NTcsIm5iZiI6MTc0MzQ0ODA1NywianRpIjoiVm10NnQ0NUhVMUpQTEdlTyIsInN1YiI6ImYwM2QzMDkyLTcwYzAtNGRhMi04MGZjLWQyMDQxZTE1MTM1OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dJ7r-x9TYQ9dqr463cCEU8OzQeHxDS5TPrQRMOuSiNk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "book_id",
+							"value": "004a3ff6-831f-41bd-b490-d3b7b3b18e4d",
+							"type": "text"
+						},
+						{
+							"key": "borrow_id",
+							"value": "fd74beb3-6502-4386-acf4-7d36f94c2ad4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/return-book",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"return-book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all borrow book list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMzU4MzMwLCJleHAiOjE3NDMzNjE5MzAsIm5iZiI6MTc0MzM1ODMzMCwianRpIjoiU2YyR3k4RG5UUlRMQ0E3ZSIsInN1YiI6ImYwM2QzMDkyLTcwYzAtNGRhMi04MGZjLWQyMDQxZTE1MTM1OCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.96rYTWsMCfV_sIa3T_qXxy5Oyu8kpDpA5Qzu2f6gics",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-borrowed-list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-borrowed-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get borrow details of specific book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQzMzgzNzc0LCJleHAiOjE3NDMzODczNzQsIm5iZiI6MTc0MzM4Mzc3NCwianRpIjoiaEkwWmJ1dkV1Zk5SZ3JNTyIsInN1YiI6IjM5MmY4YWQ4LTg0YjAtNGQ0Zi1hOTljLTQ3ZjEwNjZhYjFmOCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.iLR5g5YAOTd5NUe0msikxVjWx67dTwWXl6Lv9k-31Rk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get-bookwise-borrow-list/3b33911e-5fd7-49fe-817e-07529658223b?page=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get-bookwise-borrow-list",
+						"3b33911e-5fd7-49fe-817e-07529658223b"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
